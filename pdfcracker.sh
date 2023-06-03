@@ -1,6 +1,26 @@
 #!/bin/bash
 #Author Prince Kumar
 #Date 3 jun 2023
+#TArp the signal
+trap user_intrupt SIGINT
+trap ussr_intrupt SIGTERM
+# make a function for user inttruption
+user_intrupt(){
+echo -e "\033[35;1m Exiting pdf cracker"
+exit 1
+}
+# NOw make a banner for this tool..
+banner(){
+        echo -ne "\033[0;1m
+ ██▓███  ▓█████▄   █████▒▄████▄   ██▀███   ▄▄▄       ▄████▄   ██ ▄█▀▓█████  ██▀███
+▓██░  ██▒▒██▀ ██▌▓██   ▒▒██▀ ▀█  ▓██ ▒ ██▒▒████▄    ▒██▀ ▀█   ██▄█▒ ▓█   ▀ ▓██ ▒ ██▒
+▓██░ ██▓▒░██   █▌▒████ ░▒▓█    ▄ ▓██ ░▄█ ▒▒██  ▀█▄  ▒▓█    ▄ ▓███▄░ ▒███   ▓██ ░▄█ ▒
+▒██▄█▓▒ ▒░▓█▄   ▌░▓█▒  ░▒▓▓▄ ▄██▒▒██▀▀█▄  ░██▄▄▄▄██ ▒▓▓▄ ▄██▒▓██ █▄ ▒▓█  ▄ ▒██▀▀█▄
+▒██▒ ░  ░░▒████▓ ░▒█░   ▒ ▓███▀ ░░██▓ ▒██▒ ▓█   ▓██▒▒ ▓███▀ ░▒██▒ █▄░▒████▒░██▓ ▒██▒                              ▒▓▒░ ░  ░ ▒▒▓  ▒  ▒ ░   ░ ░▒ ▒  ░░ ▒▓ ░▒▓░ ▒▒   ▓▒█░░ ░▒ ▒  ░▒ ▒▒ ▓▒░░ ▒░ ░░ ▒▓ ░▒▓░
+░▒ ░      ░ ▒  ▒  ░       ░  ▒     ░▒ ░ ▒░  ▒\033[33;1m MADE BY PRINCE    ▒▒ ░  ░  ▒   ░
+
+"
+}
 # First check for the operating system..
 opreating_s=$(uname -o)
 if [[ $opreating_s == "Android" ]];then
@@ -11,6 +31,7 @@ if [[ $opreating_s == "Android" ]];then
                 # NOw check for wordlist file
                 if [[ -f $2 ]];then
                         # NOw read the wordlist file line by line and crack the password
+                        banner
                         while read -r line;do
                                 # NOw try to crack the password here
                                 pdfcpu decrypt -upw $line $1 $1unlock.pdf > /dev/null 2>&1
@@ -32,3 +53,4 @@ if [[ $opreating_s == "Android" ]];then
 else
         echo "Follow the standard dabian based process"
 fi
+
