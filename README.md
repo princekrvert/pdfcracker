@@ -8,7 +8,7 @@
 <a href="https://img.shields.io/badge/PRINCE-KUMAR-green" ><img  src="https://img.shields.io/badge/PRINCE-KUMAR-green"></a>  <a href="#" ><img  src="https://img.shields.io/badge/PDFCRACKER-red"></a>  <a href="#"><img src="https://img.shields.io/badge/MADE%20WITH%20-BASH-yellow"></a></p>
 <h2> Installation cmd </h2>
 
-## currently only available for android 
+#### currently only available for android
 
 * `apt update && apt upgrade`
 * `pkg install git`
