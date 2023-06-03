@@ -17,6 +17,7 @@ if [[ $opreating_s == "Android" ]];then
                                 # NOw check the response
                                 if [[ $? == 0 ]];then
                                         echo -ne "\033[32;1m[~] Password found $line"
+                                        exit 0
                                 else
                                         echo -e "\033[33;1m[!] Trying $line "
                                 fi
