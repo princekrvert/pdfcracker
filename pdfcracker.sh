@@ -5,7 +5,7 @@
 opreating_s=$(uname -o)
 if [[ $opreating_s == "Android" ]];then
         #first check for the instllation for pdfcpu
-        commnad -v pdfcpu 2>&1 > /dev/null || { echo "Installing pdfcpu"; pkg install pdfcpu -y; }
+        command -v pdfcpu 2>&1 > /dev/null || { echo "Installing pdfcpu"; pkg install pdfcpu -y; }
         # NOw go for the actual process.. $1 will be the path to the pdf and $2 will be the path to the wordlist
         if [[ -f $1 ]];then
                 # NOw check for wordlist file
