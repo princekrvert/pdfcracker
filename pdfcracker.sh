@@ -13,10 +13,10 @@ if [[ $opreating_s == "Android" ]];then
                         # NOw read the wordlist file line by line and crack the password
                         while read -r line;do
                                 # NOw try to crack the password here
-                                pdfcpu decrypt -upw $line $1 $1+unlock.pdf 2>&1 > /dev/null
+                                pdfcpu decrypt -upw $line $1 $1unlock.pdf > /dev/null 2>&1
                                 # NOw check the response
                                 if [[ $? == 0 ]];then
-                                        echo -ne "\033[32;1m Password found $line"
+                                        echo -ne "\033[32;1m[~] Password found $line"
                                 else
                                         echo -e "\033[33;1m[!] Trying $line "
                                 fi
